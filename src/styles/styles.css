@@ -1,0 +1,198 @@
+:root {
+    --underline-Color: #11abb0;
+    --hover-color: #f05d1c;
+    --gray-color: #999999;
+    --trasparent-orange: #eb5424;
+}
+
+header#home {
+    background-attachment: fixed;
+}
+
+ul.about-me {
+    list-style-type: circle;
+}
+ul.resume-ul {
+    list-style:disc;
+}
+ul.sk-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 5rem;
+}
+
+ul.sk-grid li {
+    height: 22px !important;
+    border: 2px solid #222;
+}
+ul.sk-grid li span.bar-expand {
+    height: 100% !important;
+    background-color: var(--underline-Color) !important;
+    border-right: 2px solid var(--hover-color);
+}
+
+.html5, .css, .javascript, .npm, .github {
+    width: 90% !important;
+}
+
+.nodejs, .scss, .tailwind, .firebase, .mongodb {
+    width: 60% !important;
+}
+.reactjs, .wordpress {
+    width: 80% !important;
+}
+.bootstrap, .redux, .expressjs {
+    width: 70% !important;
+}
+
+.hr {
+    margin: 2em 0px 2em !important;
+}
+
+.cert-btn {
+    font: 14px/15px 'opensans-bold', sans-serif;
+    padding: 10px 15px;
+    margin-bottom: 50px;
+    
+}
+
+div.download-resume {
+    margin: 20px 0px;
+}
+div.download-resume > a {
+    color: var(--hover-color) !important;
+    padding: 10px 20px !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 25px !important;
+}
+
+div.download-resume > a:hover {
+    color: var(--underline-Color) !important;
+}
+
+div.choose-b-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0rem;
+    flex-wrap: wrap;
+}
+
+div.choose-b-container button {
+  background-color: transparent;
+  color: var(--gray-color);
+  padding: 5px 17px !important;
+  font-size: 16px;
+  font-family: sans-serif;
+
+}
+div.choose-b-container button:hover,
+div.choose-b-container button.active {
+    color: white;
+    background-color: var(--hover-color);
+}
+
+div#portfolio-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.portfolio-item {
+   height: 300px;
+   width: 300px;
+   margin: 15px;
+}
+
+div.portfolio-item div.item-wrap {
+    border: .5px solid var(--underline-Color);
+}
+div.portfolio-item div.item-wrap div.img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center !important;
+    display: flex;
+}
+
+div.portfolio-item div.item-wrap, 
+div.portfolio-item div.item-wrap a,
+div.portfolio-item div.item-wrap div.img{
+    height: 100%;
+    width: 100%;
+}
+div.portfolio-item div.item-wrap a div.overlay,
+div.portfolio-item div.item-wrap a div.overla div.overlay-btn-container button{
+    display: none;
+}
+div.portfolio-item:hover, div.portfolio-item div.item-wrap a div.overlay,
+div.portfolio-item div.item-wrap a div.overla div.overlay-btn-container button {
+    display: block;
+}
+div.portfolio-item div.item-wrap a div.portfolio-item-meta {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+} 
+
+div.portfolio-item div.item-wrap a div.portfolio-item-meta h5 {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+div.portfolio-item div.item-wrap a div.portfolio-item-meta p {
+    letter-spacing: 1px;
+}
+div.portfolio-item div.item-wrap a div.portfolio-item-meta button {
+    background-color: transparent;
+    color: var(--underline-Color);
+    padding: 0;
+}
+
+div.portfolio-item div.item-wrap a div.portfolio-item-meta button:hover {
+    color: #ffffff;
+}
+div.p-git-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 4rem;
+}
+div.p-git-link > a {
+    border-bottom: 1px solid var(--gray-color);
+}
+
+div.p-git-link > a:hover {
+    color: var(--gray-color) !important;
+    border-color: var(--underline-Color);
+}
+
+section#contact {
+    padding-bottom: 0px !important;
+}
+
+div.contact-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90% !important;
+    margin: auto;
+}
+
+div.contact-form-container > form {
+    width: 100%;
+}
+#contact input, #contact textarea, #contact select {
+    padding: 10px 10px;
+}
+
+footer {
+    margin-bottom: 0px;
+}
+
+div.overlay-btn-container {
+    display: flex;
+    gap: 20px;
+}
