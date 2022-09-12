@@ -59,14 +59,15 @@ ul.sk-grid li span.bar-expand {
 div.download-resume {
     margin: 20px 0px;
 }
-div.download-resume > a {
+div.download-resume > div.a {
+    height: 100%;
     color: var(--hover-color) !important;
     padding: 10px 20px !important;
     background-color: rgba(0, 0, 0, 0.6) !important;
     border-radius: 25px !important;
 }
 
-div.download-resume > a:hover {
+div.download-resume > div.a:hover {
     color: var(--underline-Color) !important;
 }
 
@@ -115,20 +116,13 @@ div.portfolio-item div.item-wrap div.img {
 }
 
 div.portfolio-item div.item-wrap, 
-div.portfolio-item div.item-wrap a,
+div.portfolio-item div.item-wrap div.a,
 div.portfolio-item div.item-wrap div.img{
     height: 100%;
     width: 100%;
 }
-div.portfolio-item div.item-wrap a div.overlay,
-div.portfolio-item div.item-wrap a div.overla div.overlay-btn-container button{
-    display: none;
-}
-div.portfolio-item:hover, div.portfolio-item div.item-wrap a div.overlay,
-div.portfolio-item div.item-wrap a div.overla div.overlay-btn-container button {
-    display: block;
-}
-div.portfolio-item div.item-wrap a div.portfolio-item-meta {
+
+div.portfolio-item div.item-wrap div.a div.portfolio-item-meta {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -137,20 +131,20 @@ div.portfolio-item div.item-wrap a div.portfolio-item-meta {
     gap: 15px;
 } 
 
-div.portfolio-item div.item-wrap a div.portfolio-item-meta h5 {
+div.portfolio-item div.item-wrap div.a div.portfolio-item-meta h5 {
     font-size: 18px;
     letter-spacing: 2px;
 }
-div.portfolio-item div.item-wrap a div.portfolio-item-meta p {
+div.portfolio-item div.item-wrap div.a div.portfolio-item-meta p {
     letter-spacing: 1px;
 }
-div.portfolio-item div.item-wrap a div.portfolio-item-meta button {
+div.portfolio-item div.item-wrap div.a div.portfolio-item-meta button {
     background-color: transparent;
     color: var(--underline-Color);
     padding: 0;
 }
 
-div.portfolio-item div.item-wrap a div.portfolio-item-meta button:hover {
+div.portfolio-item div.item-wrap div.a div.portfolio-item-meta button:hover {
     color: #ffffff;
 }
 div.p-git-link {
@@ -196,3 +190,4 @@ div.overlay-btn-container {
     display: flex;
     gap: 20px;
 }
+

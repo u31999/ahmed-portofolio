@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 const PortfolioItems = ({data}) => {
+const [show, setShow] = useState(false)
   return( 
     
       data.map((item, i) => (
-        <div className="portfolio-item" key={i} onMouseOver={(e) => e.target.className += ' show'}>
+        <div className="portfolio-item" key={i}>
                   <div className="item-wrap">
-                    <a href="#modal-01">
-                      <div style={{backgroundImage: `url(${item.imgurl})`}} className='img'>
+                    <div className='a'>
+                      <div style={{backgroundImage: `url(${item.imgurl})`}} className='img' 
+                      onMouseOver={() => setShow(true)}
+                      onMouseLeave={() => setShow(false)}>
                       </div>
                       <div className="overlay">
                         <div className="portfolio-item-meta">
@@ -17,13 +20,13 @@ const PortfolioItems = ({data}) => {
                             
                           ))}
                           </div>
-                          <div className='overlay-btn-container'>
-                            <button onClick={()=> window.open(item.demourl, '_blank')}>Demo</button>
-                            <button onClick={()=> window.open(item.codeurl, '_blank')}>Code</button>
+                          <div className={`overlay-btn-container`}>
+                            <button onClick={()=> window.open(item.demourl, '_blank')} style={{display : (show) => show ? 'block' : 'none'}}>Demo</button>
+                            <button onClick={()=> window.open(item.codeurl, '_blank')} style={{display : (show) => show ? 'block' : 'none'}}>Code</button>
                           </div>
                         </div>
                       </div>
-                    </a>
+                    </div>
           </div>
      </div>
         
