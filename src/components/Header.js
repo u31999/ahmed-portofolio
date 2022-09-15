@@ -1,6 +1,28 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 
 const Header = ({resumeData}) =>  {
+  
+  const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 1.3,
+      staggerChildren: 0.2
+    }
+  }
+}
+  
+const items = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
     return (
       <React.Fragment>
       
@@ -19,27 +41,38 @@ const Header = ({resumeData}) =>  {
          </nav>
 
          <div className="row banner">
-            <div className="banner-text">
-               <h1 className="responsive-headline">I am {resumeData.name}.</h1>
-               <h3 style={{color:'#fff', fontFamily:'sans-serif '}}>I am a {resumeData.role}.{resumeData.roleDescription}
-               </h3>
+            <div className="banner-text" variants={container}>
+               <motion.h1 className="responsive-headline" initial={{ scale: 0 , opacity: 0}}
+                  animate={{scale: 1, opacity: 1 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 260,
+                          damping: 40
+                          }}>I am {resumeData.name}.</motion.h1>
+               <motion.h3 style={{color:'#fff', fontFamily:'sans-serif '}} initial={{opacity: 0}} animate={{opacity: 1}} transition={{
+                delay: 1,
+                 duration: 1 ,
+                ease: "linear"   
+               }}>
+               I am a {resumeData.role}.{resumeData.roleDescription}
+               </motion.h3>
                <hr/>
-               <ul className="social">
+               <motion.ul className="social" variants={container} initial="hidden" animate="visible">
                   {
                     resumeData.socialLinks && resumeData.socialLinks.map(item =>{
                       return(
-                              <li key={item.name}>
-                                <a href={item.url} target="_blank"><i className={item.className}></i></a>
-                              </li>
+                              <motion.li key={item.name} variants={items}>
+                                <a href={item.url} target="_blank" rel="noreferrer"><i className={item.className}></i></a>
+                              </motion.li>
                             )
                           }
                     )
                   }
-               </ul>
+               </motion.ul>
             </div>
          </div>
 
-         <p className="scrolldown">
+         <p className="scrolldown" >
             <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
          </p>
 

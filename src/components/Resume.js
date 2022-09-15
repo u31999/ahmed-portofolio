@@ -1,6 +1,30 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import '../styles/styles.css'
+import {motion, useInView} from 'framer-motion'
+
 const Resume = ({resumeData}) => {
+  const ref = useRef(null)
+   const isInView = useInView(ref, {once: true})
+
+    const container = {
+      hidden: { opacity: 1, scale: 0 },
+      visible: {
+       opacity: isInView ? 1 : 0,
+       scale: isInView ? 1 : 0,
+       transition: isInView ? {
+       delayChildren: .1,
+       staggerChildren: 0.1
+    } : 'none'
+  }
+      }
+  
+const items = {
+  hidden: { y: 20, opacity: 0 },
+  visible: isInView ?{
+    y: 0,
+    opacity: 1
+  } : ''
+      }
     return (
       <section id="resume">
           <div className="row work">
@@ -110,28 +134,28 @@ const Resume = ({resumeData}) => {
 
          <div className="row skill">
 
-            <div className="columns header-col">
+            <div className="columns header-col" ref={ref}>
                <h1><span>Skills</span></h1>
             </div>
 
             <div className="ten columns main-col">
 
 
-   				<div className="bars">
+   				<div className="bars" >
 
-   				   <ul className="skills sk-grid">
+   				   <motion.ul className="skills sk-grid" variants={container} initial='hidden' animate='visible'>
                 {
                   resumeData.skills && resumeData.skills.map((item, i) => {
                     return(
-                      <li key={i}>
+                      <motion.li variants={items}>
                       <span className={`bar-expand ${item.skillname.toLowerCase()}`}>
                       </span><em>{item.skillname}</em>
-                      </li>
+                      </motion.li>
                     )
                   })
                 }
 
-   					</ul>
+   					</motion.ul>
 
    				</div>
 

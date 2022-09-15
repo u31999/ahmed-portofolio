@@ -33,16 +33,23 @@ ul.sk-grid li span.bar-expand {
 
 .html5, .css, .javascript, .npm, .github {
     width: 90% !important;
+    animation-delay: .3s;
 }
 
 .nodejs, .scss, .tailwind, .firebase, .mongodb {
     width: 60% !important;
+    animation-delay: .3s;
+
 }
 .reactjs, .wordpress {
     width: 80% !important;
+    animation-delay: .3s;
+
 }
 .bootstrap, .redux, .expressjs {
     width: 70% !important;
+    animation-delay: .3s;
+
 }
 
 .hr {

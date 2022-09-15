@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
-const PortfolioItems = ({data}) => {
+import React, { useState, useRef } from 'react';
+import {motion, useInView, AnimatePresence} from 'framer-motion'
+
+
+const PortfolioItems = ({data, isInView}) => {
+  
 const [show, setShow] = useState(false)
+const items = {
+  hidden: { y: 20, opacity: 0 },
+  visible: isInView ?{
+    y: 0,
+    opacity: 1
+  } : ''
+      }
   return( 
-    
       data.map((item, i) => (
-        <div className="portfolio-item" key={i}>
+        <motion.div className="portfolio-item" key={i} variants={items}>
                   <div className="item-wrap">
                     <div className='a'>
                       <div style={{backgroundImage: `url(${item.imgurl})`}} className='img' 
@@ -28,8 +38,7 @@ const [show, setShow] = useState(false)
                       </div>
                     </div>
           </div>
-     </div>
-        
+     </motion.div>
       ))
    
   )     
@@ -37,6 +46,22 @@ const [show, setShow] = useState(false)
 }
 
 const Porfolio = ({portofilioData}) => {
+  const ref = useRef(null)
+   const isInView = useInView(ref)
+
+    const container = {
+      hidden: { opacity: 1, scale: 0 },
+      visible: {
+       opacity: isInView ? 1 : 0,
+       scale: isInView ? 1 : 0,
+       transition: isInView ? {
+       delayChildren: .3,
+       staggerChildren: 0.2
+    } : 'none'
+  }
+      }
+  
+
   const [menu, setMenu] = React.useState('')
 
   const portofilioDataAll = (data) => {
@@ -53,13 +78,15 @@ const Porfolio = ({portofilioData}) => {
    // portofilioDataAll(portofilioData)
 
   React.useEffect(()=> {
-    if(menu === '') setMenu('all')
+    if(menu === '') {
+      setMenu('all')
+  }
   }, [menu])
     return (
-      <section id="portfolio">
+      <section id="portfolio" > 
       <div>
       </div>
-      <div className="row p-row">
+      <div className="row p-row" ref={ref}>
         <div className="twelve columns collapsed">
           <h1>Check Out Some of My Works.</h1>
 
@@ -86,16 +113,18 @@ const Porfolio = ({portofilioData}) => {
                >WORDPRESS</button>
           </div>
           
-
-          <div id="portfolio-wrapper" className="bgrid-quarters s-bgrid-thirds cf">
+          <AnimatePresence>
+          <motion.div id="portfolio-wrapper" className="bgrid-quarters s-bgrid-thirds cf" 
+          variants={container} initial='hidden' animate='visible' key='modal' exit='hidden'>
           {
-            (menu === 'all') ? <PortfolioItems data={portofilioDataAll(portofilioData)} />
-            : (menu === 'mern') ? <PortfolioItems data={portofilioData.mern} />
-            : (menu === 'react') ? <PortfolioItems data={portofilioData.react} />
-            : (menu === 'javaScript') ? <PortfolioItems data={portofilioData.javaScript} />
-            : <PortfolioItems data={portofilioData.wordpress} />
+            (menu === 'all') ? <PortfolioItems isInView={isInView} data={portofilioDataAll(portofilioData)} />
+            : (menu === 'mern') ? <PortfolioItems isInView={isInView} data={portofilioData.mern} />
+            : (menu === 'react') ? <PortfolioItems isInView={isInView} data={portofilioData.react} />
+            : (menu === 'javaScript') ? <PortfolioItems isInView={isInView} data={portofilioData.javaScript} />
+            : <PortfolioItems isInView={isInView} data={portofilioData.wordpress} />
           }
-              </div>
+              </motion.div>
+            </AnimatePresence>
         </div>
 
         <div className='p-git-link'>
