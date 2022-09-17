@@ -50,7 +50,7 @@ let resumeData = {
       {
         "CompanyName":"Freelancer",
         "specialization":"Full-stack Developer",
-        "MonthOfLeaving":"May 2018",
+        "MonthOfLeaving":"Jan 2022",
         "YearOfLeaving":"",
         "Achievements":["Create website for (Abahfs Company for import and export)",
       'Creating ZoolStore an online store for saling dropshipping items from aliexpress.']
