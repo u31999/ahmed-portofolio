@@ -147,7 +147,7 @@ const items = {
                 {
                   resumeData.skills && resumeData.skills.map((item, i) => {
                     return(
-                      <motion.li variants={items}>
+                      <motion.li variants={items} key={i}>
                       <span className={`bar-expand ${item.skillname.toLowerCase()}`}>
                       </span><em>{item.skillname}</em>
                       </motion.li>

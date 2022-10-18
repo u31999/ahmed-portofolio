@@ -18,8 +18,8 @@ const items = {
                   <div className="item-wrap">
                     <div className='a'>
                       <div style={{backgroundImage: `url(${item.imgurl})`}} className='img' 
-                      onMouseOver={() => setShow(true)}
-                      onMouseLeave={() => setShow(false)}>
+                      onMouseOver={() => !show && setShow(true)}
+                      onMouseLeave={() => show && setShow(false)}>
                       </div>
                       <div className="overlay">
                         <div className="portfolio-item-meta">
@@ -107,6 +107,10 @@ const Porfolio = ({portofilioData}) => {
               className={`${menu === 'javaScript' ? 'active' : ''}`}
               onClick={(e) => setMenu(e.target.value)}
                >VANILA JS</button>
+               <button value='node' 
+              className={`${menu === 'node' ? 'active' : ''}`}
+              onClick={(e) => setMenu(e.target.value)}
+               >NODE</button>
               <button value='wordpress' 
               className={`${menu === 'wordpress' ? 'active' : ''}`}
               onClick={(e) => setMenu(e.target.value)}
@@ -121,6 +125,7 @@ const Porfolio = ({portofilioData}) => {
             : (menu === 'mern') ? <PortfolioItems isInView={isInView} data={portofilioData.mern} />
             : (menu === 'react') ? <PortfolioItems isInView={isInView} data={portofilioData.react} />
             : (menu === 'javaScript') ? <PortfolioItems isInView={isInView} data={portofilioData.javaScript} />
+            : (menu === 'node') ? <PortfolioItems isInView={isInView} data={portofilioData.node} />
             : <PortfolioItems isInView={isInView} data={portofilioData.wordpress} />
           }
               </motion.div>

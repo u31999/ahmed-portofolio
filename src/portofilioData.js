@@ -60,6 +60,16 @@ const portofilioData =  {
         "imgurl":"images/portfolio/shoes-store.png",
         }
     ],
+    node: [
+      {
+        "name":"Chat-App",
+        "description": ["Chat application, allow users to join into room for chatting with people in that room", 
+        "Used in this project Express.js, Socket.io, Mocha for testing, Mustache for generating templates, and jQuery"],
+        "codeurl": 'https://github.com/u31999/node-chat-app',
+        "demourl": "https://powerful-shelf-85159.herokuapp.com/",
+        "imgurl": "images/portfolio/chat-app.png"
+      }
+    ],
     javaScript: [
         {
         "name":"Weather-App",

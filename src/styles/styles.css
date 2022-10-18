@@ -192,7 +192,9 @@ div.contact-form-container > form {
 footer {
     margin-bottom: 0px;
 }
-
+div.overlay {
+    background-color: #000000d6 !important;
+}
 div.overlay-btn-container {
     display: flex;
     gap: 20px;
