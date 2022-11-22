@@ -53,6 +53,13 @@ const portofilioData =  {
         "imgurl":"images/portfolio/feedback-app.png",
         },
         {
+        "name":"Al-Nakeel-Meat-factory",
+        "description":["Landing page for a meat factory", "Build with React, react-bootstrap, swiper, framer-motion"],
+        "demourl": 'https://al-nakeel-factory.vercel.app/',
+        'codeurl': 'https://github.com/u31999/al-nakeel-factory',
+        "imgurl":"images/portfolio/alnakel-pic.png",
+        },
+        {
         "name":"Shoes-store",
         "description":["Front-end UI for a shoes store", "Build with React"],
         "demourl": 'https://u31999.github.io/shoes-store/',
@@ -71,6 +78,13 @@ const portofilioData =  {
       }
     ],
     javaScript: [
+        {
+        "name":"Little-Lemon landing page",
+        "description":["A landing page for a restaurant", "Build using HTML5, CSS3 vanilla JavaScript(es6), Bootstrap, SCSS"],
+        'codeurl': 'https://github.com/u31999/al-nakeel-factory',
+        'demourl': 'https://little-lemon-restaurant.vercel.app/',
+        "imgurl":"images/portfolio/little-lemon-pic.png"
+      },
         {
         "name":"Weather-App",
         "description":["Check the weather for the current location or other places", "Build using vanilla JavaScript(es6), HTML, CSS"],

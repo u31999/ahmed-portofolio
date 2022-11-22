@@ -79,6 +79,13 @@ let resumeData = {
       'subCertificate': []
       },
       {
+      'instituationName': 'Meta',
+      'specialization': 'HTML and CSS in depth',
+      'url': 'https://www.coursera.org/account/accomplishments/certificate/ZZQDFH6DR2BU',
+      'description': 'Coursera-Meta: This course is a part of Meta Front-End Developer Professional Certificate',
+      'subCertificate': []
+      },
+      {
       'instituationName': 'The Hong Kong University of Science and Technology',
       'specialization': 'Specialization,  Full-Stack Web Development with React',
       'url': 'https://www.coursera.org/account/accomplishments/specialization/EVES9BNA93GD?utm_product=s12n',

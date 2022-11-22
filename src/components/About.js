@@ -72,7 +72,7 @@ const items = {
                     Email : alzain31999@gmail.com
                     </div>
                     <div className='download-resume'>
-                     <a href='/full-stack-resume.pdf'download><FaDownload />  <span>Download Resume</span></a>
+                     <a href='/ahmed-resume.pdf'download><FaDownload />  <span>Download Resume</span></a>
                     </div>
        					</div>
                      <hr/>
